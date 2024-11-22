@@ -1,10 +1,15 @@
-<h1>Add a new comment</h1>
+<h1>Add a movie to your "<%= @list.name %>" list</h1>
 
 <div>
-    <%= simple_form_for [@list, @bookmark] do |f| %>
-        <%= f.input :comment %>
-        <%= f.association :movie %>
-        <%= f.association :list %>
-        <%= f.button :submit %>
-    <% end %>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <div>
+      <%= f.input :comment, placeholder: "Enter a comment about the movie" %>
+    </div>
+    <div>
+      <%= f.association :movie, prompt: "Select a movie" %>
+    </div>
+    <div>
+      <%= f.submit class: "btn btn-flat" %>
+    </div>
+  <% end %>
 </div>
